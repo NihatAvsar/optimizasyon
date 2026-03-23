@@ -1,0 +1,43 @@
+[System]
+Name='Bulanik'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=5
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='INPUT1'
+Range=[52 76]
+NumMFs=3
+MF1='Düşük':'trimf',[52 52 57]
+MF2='Orta':'trimf',[54 58 62]
+MF3='Yüksek':'trimf',[58 74 76]
+
+[Input2]
+Name='INPUT2'
+Range=[4 20]
+NumMFs=3
+MF1='Düşük':'trimf',[4 4.5 5]
+MF2='Orta':'trimf',[4.5 5 6]
+MF3='Yüksek':'trimf',[5.5 11 20]
+
+[Output1]
+Name='CIKIS'
+Range=[8 29]
+NumMFs=3
+MF1='low':'trimf',[9 9.5 11]
+MF2='moderate':'trimf',[10 11.5 12]
+MF3='high':'trimf',[11 14 29]
+
+[Rules]
+1 1, 1 (1) : 1
+1 3, 3 (1) : 1
+2 2, 1 (1) : 1
+3 2, 3 (1) : 1
+3 3, 2 (1) : 1
